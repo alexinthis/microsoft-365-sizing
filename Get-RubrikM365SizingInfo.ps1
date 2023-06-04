@@ -2,6 +2,7 @@
 .SYNOPSIS
     Get-RubrikM365SizingInfo.ps1 returns statistics on number of accounts, sites and how much storage they are using in a Micosoft 365 Tenant
 .DESCRIPTION
+    This file is a fork of Rubrik's original sizer that you can find here: https://github.com/rubrikinc/microsoft-365-sizing
     Get-RubrikM365SizingInfo.ps1 returns statistics on number of accounts, sites and how much storage they are using in a Micosoft 365 Tenant
     In this script, Rubrik uses Microsoft Graph APIs to return data from the customer's M365 Tenant. Data is collected via the Graph API
     and then downloaded to the customer's machine. The downloaded reports can be found in the customers $systemTempFolder folder. This data is left 
