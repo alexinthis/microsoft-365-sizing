@@ -1,10 +1,10 @@
 # Microsoft 365 Sizing PowerShell Script
 
-[![Download zip](https://user-images.githubusercontent.com/8610203/145614905-a6d64f3a-adab-4c3f-9bf9-ffa4fdf6793f.png "Download zip")](https://github.com/rubrikinc/microsoft-365-sizing/archive/refs/heads/main.zip)
+[![Download zip](https://user-images.githubusercontent.com/8610203/145614905-a6d64f3a-adab-4c3f-9bf9-ffa4fdf6793f.png "Download zip")](https://github.com/alexinthis/microsoft-365-sizing/archive/refs/heads/main.zip)
 
 ```
-./Get-RubrikM365SizingInfo.ps1
-[INFO] Starting the Rubrik Microsoft 365 sizing script (v4.0).
+./Get-M365SizingInfo.ps1
+[INFO] Starting the The Missing Link SmartPROTECT Microsoft 365 sizing script (v4.11).
 [INFO] Connecting to the Microsoft Graph API using 'Reports.Read.All', 'User.Read.All', and 'Group.Read.All' (if filtering results by Azure AD Group) permissions.
 [INFO] Retrieving the Total Storage Consumed for ...
  - Exchange
@@ -18,10 +18,10 @@
 [INFO] Switching to the Microsoft Exchange Online Module for more detailed reporting capabilities.
 [INFO] Retrieving all Exchange Mailbox In-Place Archive sizing.
 [INFO] Disconnecting from the Microsoft Exchange Online Module
-[INFO] Calculating the forecasted total storage need for Rubrik.
+[INFO] Calculating the forecasted total storage need for SmartPROTECT for M365..
 
 
-M365 Sizing information has been written to /dev/Rubrik-M365-Sizing.html
+M365 Sizing information has been written to /dev/SmartPROTECT-M365-Sizing.html
 ```
 
 ## Requirements
@@ -33,7 +33,7 @@ M365 Sizing information has been written to /dev/Rubrik-M365-Sizing.html
 
 ## Installation
 
-1. Download the [Get-RubrikM365SizingInfo.ps1](https://github.com/rubrikinc/microsoft-365-sizing/archive/refs/heads/main.zip) PowerShell script to your local machine
+1. Download the [Get-RubrikM365SizingInfo.ps1](https://github.com/alexinthis/microsoft-365-sizing/archive/refs/heads/main.zip) PowerShell script to your local machine
 2. Install the `Microsoft.Graph.Reports` and `ExchangeOnlineManagement` modules from the PowerShell Gallery
 
 ```powershell
@@ -42,12 +42,12 @@ Install-Module Microsoft.Graph.Reports, Microsoft.Graph.Groups, ExchangeOnlineMa
 
 ## Usage
 
-1. Open a PowerShell terminal and navigate to the folder/directory where you previously downloaded the [Get-RubrikM365SizingInfo.ps1](https://github.com/rubrikinc/microsoft-365-sizing/blob/main/Get-RubrikM365SizingInfo.ps1) file.
+1. Open a PowerShell terminal and navigate to the folder/directory where you previously downloaded the [Get-RubrikM365SizingInfo.ps1](https://github.com/alexinthis/microsoft-365-sizing/blob/main/Get-M365SizingInfo.ps1) file.
 
 2. Run the script.
 
 ```
-./Get-RubrikM365SizingInfo.ps1
+./Get-M365SizingInfo.ps1
 ```
 
 > NOTE - If you receive a PowerShell execution policy error message you can run the following command:
@@ -56,7 +56,7 @@ Install-Module Microsoft.Graph.Reports, Microsoft.Graph.Groups, ExchangeOnlineMa
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-3. Authenticate and acknowledge report access permissions in the browser window/tab that appears. This will occur twice during the script execution.
+3. Authenticate and acknowledge report access permissions in the browser window/tab that appears. This will occur multiple times during the script execution and will open a new tab each time. To complete the script each authentication request needs to be completed. 
 
 > Note: There is a known issue with the Microsoft authentication process that may result in an error message during the initial authentication process. If this occurs, re-run the script and the error will no longer show.
 
@@ -78,7 +78,7 @@ The "User Principal Name" corresponds with the account name you used to sign int
 To filter OneDrive and Exchange results to a specific subset of users in an AzureAdGroup use the `-AzureAdGroupName` flag.
 
 ```
-./Get-RubrikM365SizingInfo.ps1 -AzureAdGroupName "RubrikEmployees"
+./Get-RubrikM365SizingInfo.ps1 -AzureAdGroupName "Employees"
 ```
 
 ## What information does the script access?

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Get-M365SizingInfo.ps1 returns statistics on number of accounts, sites and how much storage they are using in a Micosoft 365 Tenant
+    Get-M365SizingInfo.ps1 returns statistics on number of accounts, sites and how much storage they are using in a Micosoft 365 Tenant.
 .DESCRIPTION
     This file is a fork of Rubrik's original sizer that you can find here: https://github.com/rubrikinc/microsoft-365-sizing
     Get-M365SizingInfo.ps1 returns statistics on number of accounts, sites and how much storage they are using in a Micosoft 365 Tenant
@@ -36,7 +36,7 @@ param (
 
 $Period = '180'
 
-$Version = "v4.0"
+$Version = "v4.11"
 Write-Output "[INFO] Starting The Missing Link SmartPROTECT Microsoft 365 sizing script ($Version)."
 
 # Provide OS agnostic temp folder path for raw reports
@@ -664,7 +664,7 @@ $HTML_CODE = @"
             margin-top: 0;
 
         }
-        
+
         .SmartPROTECT-logo path {
             fill: white;
         }
